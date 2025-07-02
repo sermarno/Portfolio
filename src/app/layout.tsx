@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { ReactNode } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "My Portfolio",
@@ -14,7 +14,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-white text-gray-900">
         <Header />
         <main className="p-4">{children}</main>
-        <Footer />
       </body>
     </html>
   );
