@@ -11,12 +11,26 @@ export default function Header() {
 
   return (
     <header className="p-4 flex justify-between items-center bg-black text-white relative z-50">
-      <Link href="/">
+      <Link
+        href="/"
+        className="relative w-[120px] h-[50px] group hover:rotate-90 transition-transform duration-300 ease-in-out"
+      >
+        {/* Default logo */}
         <Image
-          src="/icon.svg"
-          alt="Serra Portfolio Icon"
-          width={120}
-          height={50}
+          src="/logo_default.png"
+          alt="Serra Portfolio Logo"
+          fill
+          className="object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+          priority
+        />
+
+        {/* Hover logo */}
+        <Image
+          src="/logo_hover.png"
+          alt="Serra Portfolio Logo Hover"
+          fill
+          className="object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-0 left-0"
+          priority
         />
       </Link>
 
