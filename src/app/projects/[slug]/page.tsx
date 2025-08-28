@@ -50,16 +50,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {/* Video Demo */}
-      {project.video && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Video Demo</h2>
-          <video controls className="w-full max-h-[500px] rounded-lg shadow-lg">
-            <source src={project.video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </section>
-      )}
+      {/* YouTube Video Demo */}
+      <h2 className="text-2xl font-semibold mb-2">Video Demo</h2>
+      <div className="w-full aspect-video mb-6 rounded-lg shadow-lg overflow-hidden">
+        <iframe
+          className="w-full h-full"
+          src={`https://www.youtube.com/embed/${project.youtubeId}`}
+          title={project.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
 
       {/* Skills / Technologies */}
       {project.skills && project.skills.length > 0 && (

@@ -10,8 +10,14 @@ const projects = [
       Aldeas Connect is a platform for monitoring and managing smart village initiatives
       in Mexico. It features user-centered data dashboards and interactive analytics tools
       for stakeholders.`,
-    images: ["/aldeasConnect.png", "/aldeasConnect2.png"],
-    video: "/aldeasConnectDemo.mp4",
+    images: [
+      "/aldeasConnect.png",
+      "/aldeasConnect2.png",
+      "/aldeasConnect3.png",
+      "/aldeasConnect4.png",
+      "/aldeasConnect5.png",
+    ],
+    youtubeId: "p7gj1MFj7qk",
     skills: ["React", "SQL", "Python", "UX Research", "Agile"],
   },
   {
