@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import projects from "@/data/projects";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* Projects Section */}
       <section className="flex justify-center px-6 py-12 bg-[#3d3d3d] relative">
         <div className="max-w-6xl w-full">
@@ -64,126 +66,30 @@ export default function HomePage() {
             className="flex overflow-x-auto gap-6 scroll-smooth"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {/* Aldeas Connect */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/aldeasConnect.png"
-                alt="Aldeas Connect Website Screenshot"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Aldeas Connect
-                </h3>
-                <p>Informatics Capstone, Fall 2024 - Spring 2025</p>
-              </div>
+            {projects.map((project) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`}>
+                <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg cursor-pointer">
+                  <Image
+                    src={project.coverImage}
+                    alt={`${project.title} Screenshot`}
+                    width={400}
+                    height={250}
+                    className="object-cover w-full h-48"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    <p>{project.subtitle}</p>
+                  </div>
 
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                Full-Stack Development
-              </div>
-            </div>
-            {/* Discover Washington */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/discoverWashington.png"
-                alt="Discover Washington Mobile App Screenshot"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Discover Washington
-                </h3>
-                <p>IU HCC, Spring 2025</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                UX Research
-              </div>
-            </div>
-            {/* Weight Time */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/weightTime.png"
-                alt="Weight Time Website Prototype Screenshot"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Weight Time
-                </h3>
-                <p>IU Visual Design, Fall 2023</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                Web Design
-              </div>
-            </div>
-            {/* Weight Time */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/weightTime.png"
-                alt="Weight Time Website Prototype Screenshot"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Weight Time
-                </h3>
-                <p>IU Visual Design, Fall 2023</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                Web Design
-              </div>
-            </div>
-            {/* Adobe Photoshop */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/rainyNight.png"
-                alt="Rainy Night Photoshop Practice"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Rainy Night
-                </h3>
-                <p>IU Visual Design, Spring 2025</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                Adobe Photoshop
-              </div>
-            </div>
-            {/* Foodie Match Prototype */}
-            <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg">
-              <Image
-                src="/foodieMatch.png"
-                alt="Foodie Match Prototype Screenshot"
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">
-                  Foodie Match
-                </h3>
-                <p>IU HCI, Fall 2023</p>
-              </div>
-
-              <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                UX Research
-              </div>
-            </div>
+                  {/* Hover Role Banner */}
+                  <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    {project.role}
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
 
           {/* Hide scrollbar in Safari/Chrome */}
