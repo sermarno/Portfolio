@@ -29,8 +29,13 @@ const projects = [
     description: `
       A digital tourism guide for the Downtown Washington Historic Trail.
       Includes data-driven UX/UI design and context-aware features for mobile users.`,
-    images: ["/discoverWashington.png", "/discoverWashington2.png"],
-    video: "/discoverWashingtonDemo.mp4",
+    images: [
+      "/discoverWashington.png",
+      "/discoverWashington2.png",
+      "/discoverWashington3.png",
+      "/discoverWashington4.png",
+    ],
+    youtubeId: "w4r0L-lC4Lg",
     skills: ["Figma", "UX Design", "Data Modeling", "User Testing"],
   },
   {
@@ -42,8 +47,13 @@ const projects = [
     description: `
       A web app prototype focused on visualizing personal fitness data.
       Emphasized responsive design and user-friendly interfaces.`,
-    images: ["/weightTime.png", "/weightTime2.png"],
-    video: "/weightTimeDemo.mp4",
+    images: [
+      "/weightTime.png",
+      "/weightTime2.png",
+      "/weightTime3.png",
+      "/weightTime4.png",
+    ],
+    presentation: "/weightTime.pdf",
     skills: ["HTML", "CSS", "JavaScript", "Responsive Design"],
   },
   {

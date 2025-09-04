@@ -50,17 +50,36 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {/* YouTube Video Demo */}
-      <h2 className="text-2xl font-semibold mb-2">Video Demo</h2>
-      <div className="w-full aspect-video mb-6 rounded-lg shadow-lg overflow-hidden">
-        <iframe
-          className="w-full h-full"
-          src={`https://www.youtube.com/embed/${project.youtubeId}`}
-          title={project.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
+      {/* Demo Section */}
+      {/* Youtube Video or Presentation */}
+      {(project.youtubeId || project.video || project.presentation) && (
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-2">
+            {project.presentation ? "Presentation" : "Video Demo"}
+          </h2>
+
+          {/* YouTube */}
+          {project.youtubeId && (
+            <div className="w-full aspect-video mb-6 rounded-lg shadow-lg overflow-hidden">
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                title={project.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
+
+          {/* PDF Presentation */}
+          {!project.youtubeId && !project.video && project.presentation && (
+            <iframe
+              src={project.presentation}
+              className="w-full h-[600px] rounded-lg shadow-lg"
+            />
+          )}
+        </section>
+      )}
 
       {/* Skills / Technologies */}
       {project.skills && project.skills.length > 0 && (
