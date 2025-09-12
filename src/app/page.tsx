@@ -100,6 +100,12 @@ export default function HomePage() {
           `}</style>
         </div>
       </section>
+      {/* Contact Section */}
+      <section className="flex justify-center px-6 py-12 relative">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-2xl font-semibold text-white mb-6">Contact Me</h2>
+        </div>
+      </section>
     </main>
   );
 }
