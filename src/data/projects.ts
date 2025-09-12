@@ -65,7 +65,7 @@ const projects = [
     description: `
       A digital artwork created as part of visual design practice.
       Explores mood and lighting techniques in Photoshop.`,
-    images: ["/rainyNight.png", "/rainyNight2.png"],
+    images: ["/rainyNight.png", "/rainyNight2.png", "/rainyNight3.png"],
     video: "/rainyNightDemo.mp4",
     skills: ["Adobe Photoshop", "Digital Illustration", "Visual Composition"],
   },

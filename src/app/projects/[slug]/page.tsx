@@ -52,7 +52,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Demo Section */}
       {/* Youtube Video or Presentation */}
-      {(project.youtubeId || project.video || project.presentation) && (
+      {(project.youtubeId || project.presentation) && (
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">
             {project.presentation ? "Presentation" : "Video Demo"}
