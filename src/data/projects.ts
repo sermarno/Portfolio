@@ -78,8 +78,13 @@ const projects = [
     description: `
       A mobile app prototype matching users with personalized recipes.
       Focused on intuitive navigation and data-driven UX decisions.`,
-    images: ["/foodieMatch.png", "/foodieMatch2.png"],
-    video: "/foodieMatchDemo.mp4",
+    images: [
+      "/foodieMatch.png",
+      "/foodieMatch2.png",
+      "/foodieMatch3.png",
+      "/foodieMatch4.png",
+    ],
+    presentation: "/foodieMatch.pdf",
     skills: ["UX Research", "Figma", "User Testing", "Prototyping"],
   },
 ];
