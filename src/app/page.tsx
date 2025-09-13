@@ -110,12 +110,52 @@ export default function HomePage() {
           `}</style>
         </div>
       </section>
-      {/* About Informatics Section */}
-      <section className="flex justify-center px-6 py-12 relative">
-        <h2 className="text-2xl font-semibold text-white mb-6">
-          About Informatics
-        </h2>
+      {/* Informatics Section */}
+      <section className="flex flex-col px-6 py-12 relative">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-semibold text-white mb-6">
+            Informatics
+          </h2>
+
+          {/* Description */}
+          <p className="text-white mb-4">
+            <i>The study of how people, technology, and data interact.</i> My
+            B.S. in Informatics has granted me a great ability to leverage
+            technology to enhance business productivity, improve user
+            experiences, and design intuitive digital solutions for today's
+            complex technology landscape.
+          </p>
+
+          <p className="text-white mb-6">
+            Through my studies, I gained hands-on experience in UX/UI design,
+            web development, data management, and human-computer interaction —
+            all skills that allow me to bridge the gap between users and
+            technology.
+          </p>
+
+          {/* Skills List */}
+          <div className="flex flex-wrap gap-4">
+            {[
+              "UX/UI Design",
+              "Human-Computer Interaction",
+              "Web Development (React, Next.js, HTML, CSS, JS)",
+              "Data Analysis & Management",
+              "Python & VBA Programming",
+              "Database Design & SQL",
+              "User Research & Usability Testing",
+              "Responsive & Accessible Design",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="bg-[#ff65c5] text-black px-3 py-1 rounded-full text-sm font-medium"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
+
       {/* Contact Section */}
       <section className="flex justify-center bg-[#ff65c5] px-6 py-12 relative">
         <div className="max-w-6xl w-full">
@@ -191,12 +231,6 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-      </section>
-      {/* Skills Section */}
-      <section className="flex justify-center px-6 py-12 relative">
-        <h2 className="text-2xl font-semibold text-white mb-6">
-          My Passion in Tech
-        </h2>
       </section>
     </main>
   );
