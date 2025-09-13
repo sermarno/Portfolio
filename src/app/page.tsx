@@ -201,7 +201,7 @@ export default function HomePage() {
             </a>
             {/* Resume PDF */}
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition"
