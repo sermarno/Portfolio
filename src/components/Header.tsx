@@ -57,7 +57,7 @@ export default function Header() {
         />
       </button>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Dropdown Menu */}
       <nav
         className={`absolute top-full right-4 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-md flex flex-col items-start p-4 space-y-2 transition-all duration-300 ${
           isOpen
@@ -73,11 +73,11 @@ export default function Header() {
           Home
         </Link>
         <Link
-          href="/about"
+          href="/resume"
           onClick={() => setIsOpen(false)}
           className="hover:underline"
         >
-          About
+          Resume
         </Link>
         <Link
           href="/projects"

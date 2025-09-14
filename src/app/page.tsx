@@ -26,7 +26,7 @@ export default function HomePage() {
             <h1 className="text-3xl font-bold">Serra Arnold</h1>
             <p className="mt-2">UX-Focused Informatics Graduate</p>
             <Link
-              href="/about"
+              href="/resume"
               className="inline-block mt-4 text-[#ff65c5] text-sm font-medium relative group"
             >
               About Me ⇒
@@ -185,9 +185,9 @@ export default function HomePage() {
               {/* Static caption */}
               <p className="mt-2 text-xs text-white-700 text-right">
                 IU Informatics: Full-Stack Project
-                <p>
-                  <b> Aldeas Connect</b>
-                </p>
+              </p>
+              <p className="mt-2 text-xs text-right">
+                <b> Aldeas Connect</b>
               </p>
             </div>
           </div>
