@@ -120,23 +120,51 @@ export default function HomePage() {
             Informatics
           </h2>
 
-          {/* Description */}
-          <p className="text-white mb-4">
-            <i>The study of how people, technology, and data interact.</i> My
-            B.S. in Informatics has granted me a great ability to leverage
-            technology to enhance business productivity, improve user
-            experiences, and design intuitive digital solutions for today's
-            complex technology landscape.
-          </p>
+          {/* Text + Image Container */}
+          <div className="flex flex-col md:flex-row items-start gap-8 mb-6">
+            {/* Text on the left */}
+            <div className="md:w-2/3">
+              <p className="text-white mb-4">
+                <i>The study of how people, technology, and data interact.</i>{" "}
+                My B.S. in Informatics has granted me a great ability to
+                leverage technology to enhance business productivity, improve
+                user experiences, and design intuitive digital solutions for
+                today's complex technology landscape.
+              </p>
 
-          <p className="text-white mb-6">
-            Through my studies, I gained hands-on experience in UX/UI design,
-            web development, data management, and human-computer interaction —
-            all skills that allow me to bridge the gap between users and
-            technology.
-          </p>
+              <p className="text-white">
+                Through my studies, I gained hands-on experience in UX/UI
+                design, web development, data management, and human-computer
+                interaction — all skills that allow me to bridge the gap between
+                users and technology.
+              </p>
+            </div>
 
-          {/* Skills List */}
+            {/* Project Card on the right */}
+            <Link
+              href={`/projects/aldeas-connect`}
+              className="md:w-1/3 relative"
+            >
+              <div className="overflow-hidden rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:-translate-y-3 drop-shadow-lg hover:shadow-2xl">
+                <Image
+                  src="/aldeasHome.png"
+                  alt="Aldeas Connect Project"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+
+                {/* Bottom-right semi-transparent banner covering corner */}
+                <div className="absolute bottom-0 right-0 w-1/1 bg-gray-100 bg-opacity-60 px-3 py-1 rounded-br-xl">
+                  <p className="text-black text-xs text-right">
+                    Aldeas Connect Full-Stack Project
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Skills underneath */}
           <div className="flex flex-wrap gap-4">
             {[
               "UX/UI Design",
@@ -160,9 +188,9 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="flex justify-center bg-[#ff65c5] px-6 py-12 relative">
+      <section className="flex justify-center bg-[#2e2e2e] px-6 py-12 relative">
         <div className="max-w-6xl w-full">
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center space-x-20">
             {/* GitHub */}
             <a
               href="https://github.com/sermarno"
@@ -201,15 +229,6 @@ export default function HomePage() {
     2.008 3.621 4.621v5.578z"
                 />
               </svg>
-            </a>
-            {/* Resume PDF */}
-            <a
-              href="/esume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 transition"
-            >
-              <FileText size={108} />
             </a>
             {/* Gmail */}
             <a
