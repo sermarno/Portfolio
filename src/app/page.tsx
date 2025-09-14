@@ -30,15 +30,18 @@ export default function HomePage() {
             >
               About Me ⇒
               <span className="block h-0.5 bg-[#ff65c5] absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-            </Link>{" "}
-            <br />
-            <Link
-              href="/about"
-              className="inline-block mt-4 text-[#ff65c5] text-sm font-medium relative group"
-            >
-              My Resume
-              <span className="block h-0.5 bg-[#ff65c5] absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
             </Link>
+            <br />
+            <br />
+            <a
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-[#2e2e2e] text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+            >
+              <FileText size={28} className="mr-2" />
+              View Resume
+            </a>
           </div>
         </div>
       </section>
@@ -201,7 +204,7 @@ export default function HomePage() {
             </a>
             {/* Resume PDF */}
             <a
-              href="/Resume.pdf"
+              href="/esume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition"
