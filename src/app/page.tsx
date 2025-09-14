@@ -4,6 +4,7 @@ import Link from "next/link";
 import projects from "@/data/projects";
 import { Github } from "lucide-react";
 import { FileText } from "lucide-react";
+import { ExternalLink, Eye } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -140,12 +141,10 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Project Card on the right */}
-            <Link
-              href={`/projects/aldeas-connect`}
-              className="md:w-1/3 relative"
-            >
-              <div className="overflow-hidden rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:-translate-y-3 drop-shadow-lg hover:shadow-2xl">
+            {/* Project Card */}
+            <div className="md:w-1/3">
+              {/* Image + hover overlay */}
+              <div className="relative group rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src="/aldeasHome.png"
                   alt="Aldeas Connect Project"
@@ -154,14 +153,43 @@ export default function HomePage() {
                   className="w-full h-auto object-cover"
                 />
 
-                {/* Bottom-right semi-transparent banner covering corner */}
-                <div className="absolute bottom-0 right-0 w-1/1 bg-gray-100 bg-opacity-60 px-3 py-1 rounded-br-xl">
-                  <p className="text-black text-xs text-right">
-                    Aldeas Connect Full-Stack Project
-                  </p>
+                {/* Overlay (semi-transparent, fades in on hover) */}
+                <div
+                  className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 
+                        flex flex-col pointer-events-none group-hover:pointer-events-auto"
+                >
+                  <div className="flex flex-1">
+                    {/* View Project (left half) */}
+                    <Link
+                      href={`/projects/aldeas-connect`}
+                      className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
+                    >
+                      <Eye size={16} />
+                      <span>View Project</span>
+                    </Link>
+
+                    {/* Visit Website (right half) */}
+                    <a
+                      href="https://aldeasconnect.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
+                    >
+                      <ExternalLink size={16} />
+                      <span>Visit Aldeas Connect</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </Link>
+
+              {/* Static caption */}
+              <p className="mt-2 text-xs text-white-700 text-right">
+                IU Informatics: Full-Stack Project
+                <p>
+                  <b> Aldeas Connect</b>
+                </p>
+              </p>
+            </div>
           </div>
 
           {/* Skills underneath */}
