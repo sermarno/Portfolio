@@ -97,14 +97,15 @@ export default function ResumePage() {
       {/* Main Content */}
       <section className="m-9">
         {/* Professional Summary */}
+        <h3 className="flex justify-center text-xl">Professional Summary</h3>
         <div className="flex justify-center py-1">
-          <div className="flex px-2 py-2">
+          <div className="flex-shrink-0">
             <Image
               src="/resumeImage.png"
               alt="Self Portait"
-              width={950}
+              width={250}
               height={200}
-              className="w-full h-auto object-cover rounded-xl border-2 border-pink-200 shadow-[0_0_30px_5px_rgba(255,105,180,0.6)]"
+              className="object-cover rounded-xl border-2 border-pink-200 shadow-[0_0_30px_5px_rgba(255,105,180,0.6)]"
             />
           </div>
           <div className="px-3">
@@ -119,17 +120,31 @@ export default function ResumePage() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="m-9">
+        <h3 className="text-center text-xl mb-2">Education</h3>
         {/* Education Section */}
-        <div className="ml-8">
-          <h3 className="font-bold">Education</h3>
-          <p className="py-2">
-            <i>Indiana University,</i> Bloomington, IN <br /> B.S. Informatics,
-            May 2025 <br />
-          </p>
-          <ul>
-            <li>- GPA: 3.54 Overall (Major GPA: 3.9)</li>
-            <li>- Achievments: Dean's List - 3 Semesters</li>
-          </ul>
+        <div className="flex justify-between items-start gap-10">
+          <div className="flex-1">
+            <h3 className="text-lg">Indiana University</h3>
+            <p className="italic">Bloomington, IN</p>
+            <p className="mt-2">
+              B.S. Informatics, <span className="italic">May 2025</span>
+            </p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>GPA: 3.54 Overall (Major GPA: 3.9)</li>
+              <li>Achievments: Dean's List - 3 Semesters</li>
+            </ul>
+          </div>
+          <div className="flex-shrink-0">
+            <Image
+              src="/luddy.png"
+              alt="Luddy Grad Photo"
+              width={250}
+              height={200}
+              className="object-cover rounded-xl border-2 border-pink-200 shadow-[0_0_30px_5px_rgba(255,105,180,0.6)]"
+            />
+          </div>
         </div>
       </section>
     </main>
