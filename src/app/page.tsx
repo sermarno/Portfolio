@@ -50,7 +50,9 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex justify-center px-6 py-12 bg-[#3d3d3d] relative">
         <div className="max-w-6xl w-full">
-          <h2 className="text-2xl font-semibold text-white mb-6">Projects</h2>
+          <h2 className="text-2xl font-semibold text-white mb-6">
+            Project Highlights
+          </h2>
 
           {/* Arrows for Scrolling */}
           <button
