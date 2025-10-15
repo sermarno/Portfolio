@@ -10,6 +10,8 @@ const projects = [
       Aldeas Connect is a platform for monitoring and managing smart village initiatives
       in Mexico. It features user-centered data dashboards and interactive analytics tools
       for stakeholders.`,
+    extLink: "https://github.com/sermarno/Aldeas-Connect.git",
+    logo: "/acLogo.png",
     images: [
       "/aldeasConnect.png",
       "/aldeasConnect2.png",
@@ -45,8 +47,11 @@ const projects = [
     role: "Web Design",
     coverImage: "/weightTime.png",
     description: `
-      A web app prototype focused on visualizing personal fitness data.
-      Emphasized responsive design and user-friendly interfaces.`,
+      A web and mobile application prototype that emphasizes the importance of color palette, 
+      typography, visual elements, and layout design choices.`,
+    figmaLink:
+      "https://www.figma.com/design/MGOiPhWY237wlIlZX2cFw6/WEIGHT-TIME-Website-Wirefram?node-id=1-2&t=089jrtd3w8zHkqzB-1",
+    logo: "/wtLogo.png",
     images: [
       "/weightTime.png",
       "/weightTime2.png",
@@ -54,7 +59,7 @@ const projects = [
       "/weightTime4.png",
     ],
     presentation: "/weightTime.pdf",
-    skills: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    skills: ["Figma", "UX Design", "Adobe Photoshop", "Data Modeling"],
   },
   {
     slug: "rainy-night",

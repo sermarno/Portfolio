@@ -1,12 +1,13 @@
 "use client";
-import { ExternalLink, Eye } from "lucide-react";
+import Link from "next/link";
+import { Eye, CheckCircle } from "lucide-react";
 
 type ProjectCardProps = {
   title: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
-  projSkill: string;
+  projSkills: string[];
 };
 
 export default function ProjectsPage() {
@@ -16,11 +17,11 @@ export default function ProjectsPage() {
     description,
     imageSrc,
     imageAlt,
-    projSkill,
+    projSkills,
   }: ProjectCardProps) => (
     <article
-      className="bg-[#4a4a4a] p-1 rounded-xl shadow-sm transition-all duration-300 ease-in-out
-                        hover:shadow-[0_0_40px_rgba(251,91,191,0.5)] hover:-translate-y-1
+      className="bg-[#4a4a4a] p-1 text-[#e4e4e7] rounded-xl shadow-sm transition-all duration-300 ease-in-out
+                        hover:shadow-[0_0_40px_rgba(251,91,191,0.4)] hover:-translate-y-1
                         transform perspective-1000"
     >
       <div className="relative overflow-hidden rounded-lg mb-4">
@@ -31,27 +32,41 @@ export default function ProjectsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#4a4a4a] via-transparent to-transparent opacity-80 pointer-events-none rounded-lg"></div>
       </div>
-      <h3 className="text-2xl font-semibold text-white m-2">{title}</h3>
-      <p className="text-gray-300 text-base m-2">{description}</p>
-      <div className="flex mt-5 justify-between">
-        <p className="m-3">{projSkill}</p>
-        <p className="px-5 py-1 m-3 text-black bg-[#9a9a9a] rounded-lg">
-          View Project
-        </p>
+      <h3 className="text-2xl font-semibold m-2">{title}</h3>
+      <p className="text-[#d4d4d8] m-2">{description}</p>
+      <div className="flex justify-between items-start m-3 mt-4">
+        {/* Project Skills */}
+        <div className="flex flex-col gap-2">
+          {projSkills.map((skill, index) => (
+            <div key={index} className="flex items-center">
+              <CheckCircle className="mr-1" size={14} />
+              <p className="text-sm font-medium">{skill}</p>
+            </div>
+          ))}
+        </div>
+        <div>
+          <Link
+            href="/projects/weight-time"
+            className="flex px-3 py-1 items-center text-black bg-[#e4e4e7] rounded-lg duration-300 ease-in-out hover:bg-[#a1a1aa]"
+          >
+            View Project
+            <Eye className="ml-2" size={16} />
+          </Link>
+        </div>
       </div>
     </article>
   );
 
   return (
     <main className="min-h-screen bg-[#2e2e2e] p-6">
-      <h1 className="text-5xl text-center pt-8 pb-10 font-extrabold text-white">
+      <h1 className="text-5xl pt-8 pb-10 font-extrabold text-white">
         All Projects
       </h1>
 
       {/* FRONT-END SECTION */}
       <section className="flex flex-col items-center px-10 py-8 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
         <h2 className="text-4xl text-white font-bold mb-10">
-          Front-End & Design
+          Front-End Projects
         </h2>
 
         {/* PROJECTS GRID */}
@@ -61,7 +76,7 @@ export default function ProjectsPage() {
             description="Online Store and Application Design, Prototyping & Visuals"
             imageSrc="/weightTimeSnippet.png"
             imageAlt="Weight Time Prototype"
-            projSkill="UX/UI"
+            projSkills={["UX/UI", "Prototyping", "Branding"]}
           />
         </div>
       </section>
