@@ -74,8 +74,8 @@ export default function ProjectsPage() {
           Front-End Projects
         </h2>
         <p className="text-white/70 text-center italic mb-9">
-          User Testing, User Research & Design, Prototyping, Branding, HTML,
-          CSS, JavaScript, Responsive Design, Debugging, APIs, Team
+          UX/UI, User Testing, User Research & Design, Prototyping, Branding,
+          HTML, CSS, JavaScript, Responsive Design, Debugging, APIs, Team
           Collaboration
         </p>
 
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
             description="Multi-platform branding and web app prototype for an online store, featuring cohesive design systems and user-centered visual elements."
             imageSrc="/weightTimeSnippet.png"
             imageAlt="Weight Time Prototype"
-            projSkills={["UX/UI", "Prototyping", "Branding"]}
+            projSkills={["Wireframing", "Branding", "UI Design"]}
             href="/projects/weight-time"
           />
           <ProjectCard
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
             description="Mobile app prototype addressing food insecurity through personalized pickup and delivery services from local food banks."
             imageSrc="/foodieMatchSnippet.png"
             imageAlt="Foodie Match Prototype"
-            projSkills={["UX/UI", "User Testing", "Prototyping"]}
+            projSkills={["UX Design", "User Testing", "Prototyping"]}
             href="/projects/foodie-match"
           />
           <ProjectCard
@@ -114,7 +114,7 @@ export default function ProjectsPage() {
             description="Responsive mobile web application designed from client design goals, integrating interactive features for an engaging user experience."
             imageSrc="/roots&TrailsSnippet.png"
             imageAlt="Roots & Trails Image"
-            projSkills={["Prototyping", "User Design Methods", "Wix"]}
+            projSkills={["Prototyping", "Consulting", "Wix"]}
             href="/projects/discover-washington"
           />
         </div>
@@ -122,13 +122,44 @@ export default function ProjectsPage() {
 
       {/* BACK-END SECTION */}
       <section className="flex flex-col items-center px-10 py-8 mt-12 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
-        <h2 className="text-4xl text-white font-bold mb-10">
+        <h2 className="text-4xl text-white font-bold mb-3">
           Back-End Development & Data
         </h2>
         <p className="text-white/70 text-center italic">
-          (Content for Python, C#, PHP, and SQL projects will go here in a
-          similar grid layout.)
+          Python, C#, PHP, SQL, Database Management
         </p>
+        {/* ✅ PROJECTS GRID (all cards in one grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <ProjectCard
+            title="Aldeas Connect"
+            subtitle="Full-Stack Developed Website"
+            description="Information system that manages Smart Village operations, enabling rural communities to showcase their developmental projects."
+            imageSrc="/aldeasConnect2.png"
+            imageAlt="Aldeas Connect Image"
+            projSkills={["PHP", "SQL", "APIs"]}
+            href="/projects/aldeas-connect"
+          />
+        </div>
+      </section>
+
+      {/* OTHER SECTION */}
+      <section className="flex flex-col items-center px-10 py-8 mt-12 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
+        <h2 className="text-4xl text-white font-bold mb-3">Other</h2>
+        <p className="text-white/70 text-center italic">
+          Graphic Design, Virtual Reality
+        </p>
+        {/* ✅ PROJECTS GRID (all cards in one grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <ProjectCard
+            title="Tide Runner"
+            subtitle="Side-Scrolling Unity Game"
+            description="Beach-themed side-scrolling game where players control a rolling beach ball, jumping over obstacles and avoiding hazards. Highlights include implementing audio, game resets, and integrating Unity Store assets using C#."
+            imageSrc="/tideRunnerSnippet.png"
+            imageAlt="Tide Runner Image"
+            projSkills={["Unity", "C#", "Game Design"]}
+            href="/projects/tide-runner"
+          />
+        </div>
       </section>
     </main>
   );

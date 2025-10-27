@@ -4,7 +4,7 @@ import Link from "next/link";
 import projects from "@/data/projects";
 import { Github } from "lucide-react";
 import { FileText } from "lucide-react";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye, Folder } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -32,17 +32,25 @@ export default function HomePage() {
               About Me ⇒
               <span className="block h-0.5 bg-[#ff65c5] absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <br />
-            <br />
-            <a
-              href="/Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#2e2e2e] text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
-            >
-              <FileText size={28} className="mr-2" />
-              View Resume
-            </a>
+            <div className="mt-2">
+              <a
+                href="/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-[#2e2e2e] text-white px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+              >
+                <FileText size={28} className="mr-2" />
+                View Resume
+              </a>
+              <a
+                href="/projects"
+                rel="noopener noreferrer"
+                className="m-2 inline-flex items-center justify-center text-white bg-[#fb5bbf] px-4 py-2 mt-3 rounded-lg hover:bg-[#d63d9d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+              >
+                <Folder size={28} className="mr-1 " />
+                View Projects
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -50,9 +58,19 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex justify-center px-6 py-12 bg-[#3d3d3d] relative">
         <div className="max-w-6xl w-full">
-          <h2 className="text-2xl font-semibold text-white mb-6">
-            Project Highlights
-          </h2>
+          <div className="flex justify-between mb-4">
+            <h2 className="text-2xl font-semibold text-white">
+              Project Highlights
+            </h2>
+            <a
+              href="/projects"
+              rel="noopener noreferrer"
+              className="mb-4 inline-flex items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+            >
+              <Folder size={28} className="mr-2 " />
+              All Projects
+            </a>
+          </div>
 
           {/* Arrows for Scrolling */}
           <button
@@ -172,13 +190,13 @@ export default function HomePage() {
 
                     {/* Visit Website (right half) */}
                     <a
-                      href="https://aldeasconnect.org"
+                      href="https://github.com/sermarno/Aldeas-Connect.git"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
                     >
                       <ExternalLink size={16} />
-                      <span>Visit Aldeas Connect</span>
+                      <span>View Github Repository</span>
                     </a>
                   </div>
                 </div>

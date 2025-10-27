@@ -63,6 +63,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     </span>
                   </a>
                 )}
+                {project.wixLink && (
+                  <a
+                    href={project.wixLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-[#ff65c5] text-sm font-medium group"
+                  >
+                    <span className="inline-flex items-center relative">
+                      Visit Wix Website
+                      <span className="block h-0.5 bg-[#ff65c5] absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
+                      <ExternalLink className="ml-2" size={16} />
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
             <div className="flex flex-col justify-center items-center">

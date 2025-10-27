@@ -31,6 +31,8 @@ const projects = [
     description: `
       A digital tourism guide for the Downtown Washington Historic Trail.
       Includes data-driven UX/UI design and context-aware features for mobile users.`,
+    wixLink: "https://team53704.wixstudio.com/discoverwashington",
+    logo: "/dwLogo.png",
     images: [
       "/discoverWashington.png",
       "/discoverWashington2.png",
@@ -91,6 +93,25 @@ const projects = [
     ],
     presentation: "/foodieMatch.pdf",
     skills: ["UX Research", "Figma", "User Testing", "Prototyping"],
+  },
+  {
+    slug: "tide-runner",
+    title: "Tide Runner",
+    subtitle: "IU Intro to VR, Spring 2025",
+    role: "Virtual Reality",
+    coverImage: "/tideRunner.png",
+    description: `
+    A beach-themed side-scrolling game where players control a rolling beach ball, jumping over obstacles like ice cream stands, umbrellas, and tennis nets. Designed to showcase Unity skills, the project emphasizes implementing audio (background music and sound effects), managing game resets, and integrating assets from the Unity Store. The goal is to survive as long as possible while exploring fundamental Unity features and game mechanics.
+      `,
+    logo: "/trLogo.png",
+    images: [
+      "/tideRunner.png",
+      "/tideRunner2.png",
+      "/tideRunner3.png",
+      "/tideRunner4.png",
+    ],
+    youtubeId: "9XDO2fCo7sE",
+    skills: ["Unity", "Unity Hub", "Unity Store", "C#", "3D Modeling"],
   },
 ];
 
