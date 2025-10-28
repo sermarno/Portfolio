@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Eye, CheckCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {
   title: string;
@@ -13,6 +14,9 @@ type ProjectCardProps = {
 };
 
 export default function ProjectsPage() {
+  // Back Button Router
+  const router = useRouter();
+
   // Project Card Component
   const ProjectCard = ({
     title,
@@ -64,6 +68,16 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-screen m-6 bg-[#2e2e2e] rounded-lg p-6">
+      {/* Back Button (mobile only, visible when sidebar is hidden) */}
+      <button
+        onClick={() => router.back()}
+        className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
+      >
+        <span className="material-symbols-outlined">arrow_top_left</span>
+        Go Back
+        {/* underline effect */}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+      </button>
       <h1 className="text-5xl pt-8 pb-10 font-extrabold text-white">
         All Projects
       </h1>
