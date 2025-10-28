@@ -126,6 +126,19 @@ const projects = [
     youtubeId: "-3086in2t1E",
     skills: ["JavaScript", "Form Handing", "Input Validation", "Local Storage"],
   },
+  {
+    slug: "canvas-sketch",
+    title: "Canvas Sketch Web App",
+    subtitle: "IU JavaScript, Spring 2025",
+    role: "JavaScript",
+    coverImage: "/canvasSketch.png",
+    description: `
+      Interactive web-based drawing application allowing users to create art with customizable pen sizes, multiple color modes, and keyboard or mouse controls, demonstrating dynamic UI and creative programming with the HTML Canvas API.
+      `,
+    images: ["/canvasSketch.png", "/canvasSketch2.png", "/canvasSketch3.png"],
+    youtubeId: "bbL_Ko3xJCg",
+    skills: ["JavaScript", "HTML & CSS", "DOM Manipulation", "Canvas API"],
+  },
 ];
 
 export default projects;

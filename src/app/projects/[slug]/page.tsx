@@ -12,6 +12,7 @@ interface ProjectPageProps {
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const router = useRouter();
+
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -103,16 +104,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
 
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-end items-center">
+            {project.logo && (
               <Image
-                src={project.logo!}
+                src={project.logo}
                 alt={project.title}
                 width={180}
                 height={180}
                 className="rounded-lg object-contain max-w-[70%] sm:max-w-[200px]"
               />
-            </div>
+            )}
           </div>
         </section>
 
@@ -175,6 +175,24 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 className="w-full h-[500px] sm:h-[600px] rounded-lg shadow-lg"
               />
             )}
+          </section>
+        )}
+        {/* Skills / Technologies */}
+        {project.skills && project.skills.length > 0 && (
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">
+              Skills & Technologies
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {project.skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-[#ff65c5] text-black px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </section>
         )}
       </main>
