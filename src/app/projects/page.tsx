@@ -117,6 +117,15 @@ export default function ProjectsPage() {
             projSkills={["Prototyping", "Consulting", "Wix"]}
             href="/projects/discover-washington"
           />
+          <ProjectCard
+            title="Wellness Camp Registration Form"
+            subtitle="Interactive Web Form with Front-End Validation"
+            description="Responsive registration form built with HTML, CSS, Bootstrap, and JavaScripts. Features client-side validation, dynamic table rendering from submissions, and local storage."
+            imageSrc="/wellnessForm.png"
+            imageAlt="Registration Form Image"
+            projSkills={["JavaScript", "Form Validation", "Bootstrap"]}
+            href="/projects/wellness-form"
+          />
         </div>
       </section>
 
@@ -146,17 +155,26 @@ export default function ProjectsPage() {
       <section className="flex flex-col items-center px-10 py-8 mt-12 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
         <h2 className="text-4xl text-white font-bold mb-3">Other</h2>
         <p className="text-white/70 text-center italic">
-          Graphic Design, Virtual Reality
+          Graphic Design, Virtual Reality, 3D Digitalization
         </p>
         {/* ✅ PROJECTS GRID (all cards in one grid) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           <ProjectCard
             title="Tide Runner"
             subtitle="Side-Scrolling Unity Game"
-            description="Beach-themed side-scrolling game where players control a rolling beach ball, jumping over obstacles and avoiding hazards. Highlights include implementing audio, game resets, and integrating Unity Store assets using C#."
+            description="Side-scrolling Unity game where players control a rolling beach ball, jumping over obstacles and avoiding hazards. Highlights include implementing audio, game resets, and integrating Unity Store assets using C#."
             imageSrc="/tideRunnerSnippet.png"
             imageAlt="Tide Runner Image"
             projSkills={["Unity", "C#", "Game Design"]}
+            href="/projects/tide-runner"
+          />
+          <ProjectCard
+            title="Rainy Night"
+            subtitle="Adobe Photoshop Work"
+            description="Demonstrates Adobe Photoshop skills such as layering, object selections, photo retouching, and adjustment layers."
+            imageSrc="/rainyNight.png"
+            imageAlt="Rainy Night Image"
+            projSkills={["Photoshop", "Color Adjusting", "Compositing"]}
             href="/projects/tide-runner"
           />
         </div>

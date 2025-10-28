@@ -113,6 +113,19 @@ const projects = [
     youtubeId: "9XDO2fCo7sE",
     skills: ["Unity", "Unity Hub", "Unity Store", "C#", "3D Modeling"],
   },
+  {
+    slug: "wellness-form",
+    title: "Wellness Registration Form",
+    subtitle: "IU JavaScript, Spring 2025",
+    role: "JavaScript",
+    coverImage: "/wellnessForm.png",
+    description: `
+      Simple form that handles form submission, input validation, and builds a dynamic table by saving and retrieving data from localStorage.
+      `,
+    images: ["/wellnessForm.png", "/wellnessForm2.png", "/wellnessForm3.png"],
+    youtubeId: "-3086in2t1E",
+    skills: ["JavaScript", "Form Handing", "Input Validation", "Local Storage"],
+  },
 ];
 
 export default projects;

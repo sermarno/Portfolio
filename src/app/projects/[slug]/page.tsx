@@ -113,52 +113,46 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         )}
 
         {/* Demo Section */}
-        {/* Youtube Video or Presentation */}
-        {(project.youtubeId || project.presentation) && (
+        {/* Demo Section */}
+        {(project.youtubeId || project.video || project.presentation) && (
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-2">
-              {project.presentation ? "Presentation" : "Video Demo"}
+              {project.presentation
+                ? "Presentation"
+                : project.video
+                ? "Video Demo"
+                : "YouTube Demo"}
             </h2>
 
-            {/* YouTube */}
+            {/* YouTube (works for Shorts too) */}
             {project.youtubeId && (
               <div className="w-full aspect-video mb-6 rounded-lg shadow-lg overflow-hidden">
                 <iframe
                   className="w-full h-full"
                   src={`https://www.youtube.com/embed/${project.youtubeId}`}
                   title={project.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
               </div>
             )}
 
+            {/* Local video file */}
+            {project.video && (
+              <video
+                controls
+                className="w-full mb-6 rounded-lg shadow-lg"
+                src={project.video}
+              />
+            )}
+
             {/* PDF Presentation */}
-            {!project.youtubeId && !project.video && project.presentation && (
+            {project.presentation && !project.video && !project.youtubeId && (
               <iframe
                 src={project.presentation}
                 className="w-full h-[600px] rounded-lg shadow-lg"
               />
             )}
-          </section>
-        )}
-
-        {/* Skills / Technologies */}
-        {project.skills && project.skills.length > 0 && (
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">
-              Skills & Technologies
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {project.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="bg-[#ff65c5] text-black px-3 py-1 rounded-full text-sm font-medium"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
           </section>
         )}
       </main>
