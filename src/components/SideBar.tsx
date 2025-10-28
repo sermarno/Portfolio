@@ -26,7 +26,7 @@ export default function SideBar() {
 
   return (
     <aside
-      className={`fixed top-50 left-4 bg-[#1f1f1f] text-white rounded-lg shadow-[0_0_20px_4px_grey] p-4 flex flex-col items-center md:items-start gap-4 z-50
+      className={`hidden [@media(min-width:1200px)]:flex [@media(min-width:1200px)]:fixed top-50 left-4 bg-[#1f1f1f] text-white rounded-lg shadow-[0_0_20px_4px_grey] p-4 flex flex-col items-center md:items-start gap-4 z-50
         transition-all duration-300
         ${hoverSidebar || hoverProjects ? "w-48 md:w-64" : "w-16"}
       `}
@@ -76,7 +76,13 @@ export default function SideBar() {
               hoverSidebar || hoverProjects ? "opacity-100" : "opacity-0"
             }`}
           >
-            Projects
+            <a
+              href="/projects"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center text-white rounded-lg"
+            >
+              All Projects
+            </a>
           </span>
         </button>
 
