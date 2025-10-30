@@ -92,7 +92,7 @@ export default function ProjectsPage() {
         </p>
 
         {/* ✅ PROJECTS GRID (all cards in one grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           <ProjectCard
             title="Weight Time"
             subtitle="Website and Web App Prototype"
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
             href="/projects/foodie-match"
           />
           <ProjectCard
-            title="Portfolio Showcase"
+            title="Portfolio"
             subtitle="Personal React Portfolio"
             description="Responsive React portfolio featuring interactive animations, dynamic pages, and a modern, minimalist design for enhanced user navigation."
             imageSrc="/portfolioSnippet.png"
@@ -138,15 +138,24 @@ export default function ProjectsPage() {
             projSkills={["JavaScript", "Form Validation", "Bootstrap"]}
             href="/projects/wellness-form"
           />
+          <ProjectCard
+            title="Canvas Sketch App"
+            subtitle="JavaScript Web App"
+            description="Web drawing app where users can sketch with mouse or arrow keys using a variety of color modes. Built with HTML5 and JavaScript; emphasizes interactive graphics and dynamic user input."
+            imageSrc="/canvasSketch.png"
+            imageAlt="Canvas Sketch App Image"
+            projSkills={["JavaScript", "Canvas API", "DOM Manipulation"]}
+            href="/projects/wellness-form"
+          />
         </div>
       </section>
 
       {/* BACK-END SECTION */}
       <section className="flex flex-col items-center px-10 py-8 mt-12 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
-        <h2 className="text-4xl text-white font-bold mb-3">
+        <h2 className="text-xl md:text-2xl text-white font-bold mb-3">
           Back-End Development & Data
         </h2>
-        <p className="text-white/70 text-center italic">
+        <p className="max-w-[700px] m-auto text-xs md:text-sm lg:text-md text-white/70 text-center italic mb-9">
           Python, C#, PHP, SQL, Database Management
         </p>
         {/* ✅ PROJECTS GRID (all cards in one grid) */}
@@ -165,9 +174,10 @@ export default function ProjectsPage() {
 
       {/* OTHER SECTION */}
       <section className="flex flex-col items-center px-10 py-8 mt-12 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
-        <h2 className="text-4xl text-white font-bold mb-3">Other</h2>
-        <p className="text-white/70 text-center italic">
-          Graphic Design, Virtual Reality, 3D Digitalization
+        <h2 className="text-xl md:text-2xl text-white font-bold mb-3">Other</h2>
+        <p className="max-w-[700px] m-auto text-xs md:text-sm lg:text-md text-white/70 text-center italic mb-9">
+          Graphic Design, Virtual Reality, 3D Digitalization, Game Design,
+          Photoshop
         </p>
         {/* ✅ PROJECTS GRID (all cards in one grid) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
