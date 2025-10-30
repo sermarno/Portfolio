@@ -27,74 +27,72 @@ export default function ProjectsPage() {
     projSkills,
     href,
   }: ProjectCardProps) => (
+    // Project Cards
     <article
-      className="bg-[#4a4a4a] p-1 text-[#e4e4e7] rounded-xl shadow-sm transition-all duration-300 ease-in-out
+      className="bg-[#4a4a4a] p-1 text-[#e4e4e7] max-w-[300px] rounded-xl shadow-sm transition-all duration-300 ease-in-out
                         hover:shadow-[0_0_40px_rgba(251,91,191,0.4)] hover:-translate-y-1
                         transform perspective-1000"
     >
-      <div className="relative overflow-hidden rounded-lg mb-4">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="w-full h-[250px] object-cover rounded-lg transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#4a4a4a] via-transparent to-transparent opacity-80 pointer-events-none rounded-lg"></div>
-      </div>
-      <h3 className="text-2xl font-semibold ml-2">{title}</h3>
-      <p className="text-[#f4f4f4] ml-2 mb-2">{subtitle}</p>
-      <p className="text-[#d4d4d8] mt-3 ml-2">{description}</p>
-      <div className="flex justify-between items-start m-3 mt-6">
-        {/* Project Skills */}
-        <div className="flex flex-col gap-2">
-          {projSkills.map((skill, index) => (
-            <div key={index} className="flex items-center">
-              <CheckCircle className="mr-1" size={14} />
-              <p className="text-sm font-medium">{skill}</p>
-            </div>
-          ))}
+      {/* Clickable Project Cards */}
+      <Link href={href}>
+        {/* Project Image */}
+        <div className="relative overflow-hidden rounded-lg mb-4">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="w-full h-[150px] object-cover rounded-lg transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#4a4a4a] via-transparent to-transparent opacity-80 pointer-events-none rounded-lg"></div>
         </div>
-        <div>
-          <Link
-            href={href}
-            className="flex px-3 py-1 items-center text-black bg-[#e4e4e7] rounded-lg duration-300 ease-in-out hover:bg-[#a1a1aa]"
-          >
-            View Project
-            <Eye className="ml-2" size={16} />
-          </Link>
+        {/* Project Title, Subtitle, and description */}
+        <h3 className="text-xl font-semibold ml-2">{title}</h3>
+        <p className="text-sm text-[#f4f4f4] ml-2 mb-2">{subtitle}</p>
+        <p className="text-sm text-[#d4d4d8] mt-3 ml-2">{description}</p>
+        <div className="flex text-sm flex-col m-1 mt-2 bg-[#5a5a5a] p-3 rounded-lg">
+          <h2 className="mb-2">Top Skills</h2>
+          {/* Project Skills */}
+          <div className="flex flex-col ml-4 gap-2">
+            {projSkills.map((skill, index) => (
+              <div key={index} className="flex items-center">
+                <CheckCircle className="mr-1" size={14} />
+                <p className="text-xs font-medium">{skill}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </Link>
     </article>
   );
 
   return (
-    <main className="min-h-screen m-6 bg-[#2e2e2e] rounded-lg p-6">
+    <main className="min-h-screen max-w-[1100px] m-auto m-6 bg-[#2e2e2e] rounded-lg p-6">
       {/* Back Button (mobile only, visible when sidebar is hidden) */}
       <button
         onClick={() => router.back()}
-        className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
+        className="relative flex items-center py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
       >
         <span className="material-symbols-outlined">arrow_top_left</span>
         Go Back
         {/* underline effect */}
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
       </button>
-      <h1 className="text-5xl pt-8 pb-10 font-extrabold text-white">
+      <h1 className="text-2xl md:text-4xl pt-8 pb-10 font-extrabold text-white">
         All Projects
       </h1>
 
       {/* FRONT-END SECTION */}
       <section className="flex flex-col items-center px-10 py-8 mx-auto max-w-7xl bg-[#3a3a3a] rounded-2xl border-2 border-[#5a5a5a] shadow-inner shadow-black/50">
-        <h2 className="text-4xl text-white font-bold mb-3">
+        <h2 className="text-xl md:text-2xl text-white font-bold mb-3">
           Front-End Projects
         </h2>
-        <p className="text-white/70 text-center italic mb-9">
+        <p className="max-w-[700px] m-auto text-xs md:text-sm lg:text-md text-white/70 text-center italic mb-9">
           UX/UI, User Testing, User Research & Design, Prototyping, Branding,
           HTML, CSS, JavaScript, Responsive Design, Debugging, APIs, Team
           Collaboration
         </p>
 
         {/* ✅ PROJECTS GRID (all cards in one grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
           <ProjectCard
             title="Weight Time"
             subtitle="Website and Web App Prototype"
@@ -116,14 +114,14 @@ export default function ProjectsPage() {
           <ProjectCard
             title="Portfolio Showcase"
             subtitle="Personal React Portfolio"
-            description="Responsive React portfolio featuring interactive animations and a modern, minimalist design for enhanced user navigation."
+            description="Responsive React portfolio featuring interactive animations, dynamic pages, and a modern, minimalist design for enhanced user navigation."
             imageSrc="/portfolioSnippet.png"
             imageAlt="Portfolio Website"
             projSkills={["React", "Tailwind", "Next.js"]}
             href="/projects/portfolio"
           />
           <ProjectCard
-            title="Discover Downtown Washington"
+            title="Roots & Trails"
             subtitle="Mobile Web Application"
             description="Responsive mobile web application designed from client design goals, integrating interactive features for an engaging user experience."
             imageSrc="/roots&TrailsSnippet.png"
@@ -133,7 +131,7 @@ export default function ProjectsPage() {
           />
           <ProjectCard
             title="Wellness Camp Registration Form"
-            subtitle="Interactive Web Form with Front-End Validation"
+            subtitle="Interactive Web Form"
             description="Responsive registration form built with HTML, CSS, Bootstrap, and JavaScripts. Features client-side validation, dynamic table rendering from submissions, and local storage."
             imageSrc="/wellnessForm.png"
             imageAlt="Registration Form Image"

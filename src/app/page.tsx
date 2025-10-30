@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "@/data/projects";
 import { Github } from "lucide-react";
+import { Check } from "lucide-react";
 import { FileText } from "lucide-react";
 import { ExternalLink, Eye, Folder } from "lucide-react";
 
@@ -137,16 +138,51 @@ export default function HomePage() {
       {/* Informatics Section */}
       <section className="flex flex-col px-6 py-12 relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-semibold text-white mb-6">
-            Informatics
-          </h2>
+          {/* Dictionary-style Informatics Header */}
+          <div className="flex">
+            <div className="bg-[#1a1a1a] border border-gray-700 rounded-xl p-6 mb-6">
+              <h2 className="text-3xl font-bold text-white">Informatics</h2>
+              <p className="text-gray-400 italic mt-1">/in·fr·ma·tuhks/</p>
+              <p className="text-gray-400 uppercase text-xs mt-1">noun</p>
+              <p className="text-white mt-3">
+                The study of how people, technology, and data interact. Focuses
+                on designing and leveraging technology to enhance user
+                experiences and improve productivity.
+              </p>
+            </div>
+            <div className="flex flex-col ml-3 bg-[#1a1a1a] rounded">
+              <h2 className="flex justify-center p-8 text-xl font-bold items-center">
+                Technical Skills
+              </h2>
+              {/* Skills underneath */}
+              <div className="flex flex-wrap gap-4 m-5">
+                {[
+                  "UX/UI Design",
+                  "Human-Computer Interaction",
+                  "Data Analysis & Management",
+                  "Python & VBA Programming",
+                  "Database Design & SQL",
+                  "User Research & Usability Testing",
+                  "Responsive & Accessible Design",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="flex items-center gap-1 text-[#ff65c5] px-7 text-sm font-medium"
+                  >
+                    <Check size={16} className="text-[#ff65c5]" />
+                    <span>{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Text + Image Container */}
-          <div className="flex flex-col md:flex-row items-start gap-8 mb-6">
+          <div className="flex flex-col md:flex-row items-start gap-8 mt-[50px]">
             {/* Text on the left */}
-            <div className="md:w-2/3">
+            <div className="md:w-2/3 ml-4">
+              <h2 className="text-xl mb-2">My Growth in Informatics</h2>
               <p className="text-white mb-4">
-                <i>The study of how people, technology, and data interact.</i>{" "}
                 My B.S. in Informatics has granted me a great ability to
                 leverage technology to enhance business productivity, improve
                 user experiences, and design intuitive digital solutions for
@@ -210,27 +246,6 @@ export default function HomePage() {
                 <b> Aldeas Connect</b>
               </p>
             </div>
-          </div>
-
-          {/* Skills underneath */}
-          <div className="flex flex-wrap gap-4">
-            {[
-              "UX/UI Design",
-              "Human-Computer Interaction",
-              "Web Development (React, Next.js, HTML, CSS, JS)",
-              "Data Analysis & Management",
-              "Python & VBA Programming",
-              "Database Design & SQL",
-              "User Research & Usability Testing",
-              "Responsive & Accessible Design",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="bg-[#ff65c5] text-black px-3 py-1 rounded-full text-sm font-medium"
-              >
-                {skill}
-              </span>
-            ))}
           </div>
         </div>
       </section>
