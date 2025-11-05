@@ -6,13 +6,11 @@ import { ExternalLink } from "lucide-react";
 import SideBar from "@/components/SideBar";
 
 interface ProjectPageProps {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: { slug: string };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  // handle both async and sync params
-  const resolvedParams = await Promise.resolve(params);
-  const project = projects.find((p) => p.slug === resolvedParams.slug);
+  const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
     notFound();
