@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Eye, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {

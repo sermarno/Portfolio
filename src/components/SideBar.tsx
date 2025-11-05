@@ -76,13 +76,12 @@ export default function SideBar() {
               hoverSidebar || hoverProjects ? "opacity-100" : "opacity-0"
             }`}
           >
-            <a
+            <Link
               href="/projects"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center text-white rounded-lg"
             >
               All Projects
-            </a>
+            </Link>
           </span>
         </button>
 

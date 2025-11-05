@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Eye, FileText, Folder, Github } from "lucide-react";
+import { FileText, Folder, Github } from "lucide-react";
 
 export default function ResumePage() {
   return (
@@ -103,13 +103,13 @@ export default function ResumePage() {
               build low to high-fidelity prototypes, and develop clean,
               effective code for user-centered intuitive interfaces.
             </p>
-            <a
+            <Link
               href="/projects"
               className="inline-flex flex-col items-center justify-center text-white bg-[#fb5bbf] px-1 py-1 mt-3 rounded-lg hover:bg-[#d63d9d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out w-full max-w-xs"
             >
               <Folder size={28} className="mb-1" />
               View Projects
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -124,7 +124,7 @@ export default function ResumePage() {
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>GPA: 3.54 Overall (Major GPA: 3.9)</li>
-              <li>Achievements: Dean's List - 3 Semesters</li>
+              <li>Achievements: Dean&apos;s List - 3 Semesters</li>
             </ul>
           </div>
           <div className="flex-shrink-0 w-full md:w-auto">
