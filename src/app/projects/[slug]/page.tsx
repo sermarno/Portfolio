@@ -25,7 +25,7 @@ export default function ProjectPage() {
           onClick={() => router.back()}
           className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
         >
-          <span className="material-symbols-outlined text-white mr-2">
+          <span className="material-symbols-outlined text-white">
             arrow_back
           </span>
           Go Back

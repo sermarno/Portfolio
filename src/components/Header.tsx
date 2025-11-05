@@ -4,7 +4,7 @@ import Link from "next/link";
 // importing icon.svg - Created with Adobe Illustrator :)
 import Image from "next/image";
 import { useState } from "react";
-import { Home, Folder, FileText, Contact } from "lucide-react";
+import { Folder, FileText, Contact } from "lucide-react";
 
 export default function Header() {
   // for toggle dropdown menu
@@ -34,29 +34,39 @@ export default function Header() {
           priority
         />
       </Link>
-
-      {/* Hamburger Icon - transforms to x when clicked */}
-      <button
-        className="flex flex-col justify-center cursor-pointer items-center space-y-1 w-8 h-8"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
-      >
-        <span
-          className={`block w-6 h-0.5 bg-white transform transition duration-300 ${
-            isOpen ? "rotate-45 translate-y-1.5" : ""
-          }`}
-        />
-        <span
-          className={`block w-6 h-0.5 bg-white transition duration-300 ${
-            isOpen ? "opacity-0" : ""
-          }`}
-        />
-        <span
-          className={`block w-6 h-0.5 bg-white transform transition duration-300 ${
-            isOpen ? "-rotate-45 -translate-y-1.5" : ""
-          }`}
-        />
-      </button>
+      <div className="flex">
+        <a
+          href="/Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-white bg-[#2a2a2a] px-2 py-1 mr-4 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+        >
+          <FileText size={16} className="flex-shrink-0 mr-2" />
+          Resume PDF
+        </a>{" "}
+        {/* Hamburger Icon - transforms to x when clicked */}
+        <button
+          className="flex flex-col justify-center cursor-pointer items-center space-y-1 w-8 h-8 mt-1"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-white transform transition duration-300 ${
+              isOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transition duration-300 ${
+              isOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-white transform transition duration-300 ${
+              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          />
+        </button>
+      </div>
 
       {/* Dropdown Menu */}
       <nav
@@ -67,21 +77,12 @@ export default function Header() {
         }`}
       >
         <Link
-          href="/"
-          onClick={() => setIsOpen(false)}
-          className="flex items-center relative group w-full py-1"
-        >
-          <Home size={16} className="flex-shrink-0 mr-3" />
-          Home
-          <span className="absolute bottom-0 left-0 h-0.5 bg-white w-0 group-hover:w-full transition-all duration-300"></span>
-        </Link>
-        <Link
           href="/resume"
           onClick={() => setIsOpen(false)}
           className="flex items-center relative group w-full py-1"
         >
           <FileText size={16} className="flex-shrink-0 mr-3" />
-          Resume
+          Digital Resume
           <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
         <Link
@@ -90,7 +91,7 @@ export default function Header() {
           className="flex items-center relative group w-full py-1"
         >
           <Folder size={16} className="flex-shrink-0 mr-3" />
-          Projects
+          All Projects
           <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
         <Link
@@ -99,7 +100,7 @@ export default function Header() {
           className="flex items-center relative group w-full py-1"
         >
           <Contact size={16} className="flex-shrink-0 mr-3" />
-          Contact
+          Contact Me
           <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
       </nav>

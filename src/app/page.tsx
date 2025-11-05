@@ -2,73 +2,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import projects from "@/data/projects";
-import {
-  ExternalLink,
-  Eye,
-  Folder,
-  Check,
-  Github,
-  FileText,
-} from "lucide-react";
+import { ExternalLink, Eye, Folder, Check, Github } from "lucide-react";
 
 export default function HomePage() {
   return (
     <main>
       {/* Landing Page Header */}
-      <section className="flex justify-center items-center min-h-screen bg-black text-white px-4">
+      <section className="flex justify-center items-center m-4 bg-black text-[#f4f6f7] px-4">
         <div className="flex flex-col md:flex-row items-center gap-8">
+          {/* Name and Description */}
+          <div className="text-left">
+            <h1 className="text-5xl">Serra Arnold</h1>
+            <p className="text-2xl mt-1">UX-Focused Informatics Graduate</p>
+            <p className="mt-6 max-w-[700px] text-[#a3b2bd] text-xl">
+              {" "}
+              First-generation university graduate from IU with a B.S. in
+              Informatics and focused studies in web development and design.
+              Actively identifying ways to enhance existing user interfaces on
+              devices, improve digital intuition with modernized technology, and
+              utilize UX research and design principals to identify user needs,
+              build low to high-fidelity prototypes, and develop clean,
+              effective code for user-centered intuitive interfaces.
+            </p>
+            <div className="mt-2">
+              <Link
+                href="/projects"
+                className="inline-flex w-full md:w-[200px] items-center justify-center text-white bg-[#fb5bbf] px-2 py-1 mt-6 rounded-sm hover:bg-[#d63d9d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+              >
+                See Projects
+                <span className="material-symbols-outlined text-white m-1">
+                  arrow_forward
+                </span>
+              </Link>
+            </div>
+          </div>
           {/* Portrait Image */}
           <Image
             src="/self-portrait.png"
             alt="Professional Self-Portrait"
-            width={300}
+            width={400}
             height={400}
             className="rounded-lg"
           />
-
-          {/* Name and Description */}
-          <div className="text-center md:text-left">
-            <h1 className="text-3xl font-bold">Serra Arnold</h1>
-            <p className="mt-2">UX-Focused Informatics Graduate</p>
-            <Link
-              href="/resume"
-              className="inline-block mt-4 text-[#ff65c5] text-sm font-medium relative group"
-            >
-              About Me ⇒
-              <span className="block h-0.5 bg-[#ff65c5] absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <div className="mt-2">
-              <a
-                href="/Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-[#2e2e2e] text-white px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
-              >
-                <FileText size={28} className="mr-2" />
-                View Resume
-              </a>
-              <Link
-                href="/projects"
-                className="m-2 inline-flex items-center justify-center text-white bg-[#fb5bbf] px-4 py-2 mt-3 rounded-lg hover:bg-[#d63d9d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
-              >
-                <Folder size={28} className="mr-1 " />
-                View Projects
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="flex justify-center px-6 py-12 bg-[#3d3d3d] relative">
+      <section className="flex justify-center px-6 py-12 bg-[#1a1a1a] relative">
         <div className="max-w-6xl w-full">
-          <div className="flex justify-between mb-4">
-            <h2 className="text-2xl font-semibold text-white">
+          <div className="relative mb-8">
+            <h2 className="text-2xl text-center font-semibold text-white">
               Project Highlights
             </h2>
             <Link
               href="/projects"
-              className="mb-4 inline-flex items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+              className="absolute top-0 right-0 mb-4 inline-flex items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
             >
               <Folder size={28} className="mr-2 " />
               All Projects

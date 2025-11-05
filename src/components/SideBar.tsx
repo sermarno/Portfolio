@@ -36,9 +36,9 @@ export default function SideBar() {
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="flex items-center justify-center md:justify-start w-full py-2 px-2 rounded hover:bg-[#333] transition-colors gap-2"
+        className="flex items-center justify-center md:justify-start w-full py-2 rounded hover:bg-[#333] transition-colors gap-2"
       >
-        <span className="material-symbols-outlined text-white mr-2">
+        <span className="material-symbols-outlined text-white pl-1">
           arrow_back
         </span>
         <span
@@ -46,7 +46,7 @@ export default function SideBar() {
             hoverSidebar ? "opacity-100" : "opacity-0"
           }`}
         >
-          Back
+          Go Back
         </span>
       </button>
 
@@ -57,7 +57,7 @@ export default function SideBar() {
       >
         <Home size={16} className="flex-shrink-0" />
         <span
-          className={`whitespace-nowrap transition-opacity duration-300 ${
+          className={`whitespace-nowrap transition-opacity px-1 duration-300 ${
             hoverSidebar ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -74,7 +74,7 @@ export default function SideBar() {
         <button className="flex items-center justify-center md:justify-start w-full py-2 px-2 rounded hover:bg-[#333] transition-colors gap-2">
           <Folder size={16} className="flex-shrink-0" />
           <span
-            className={`whitespace-nowrap transition-opacity duration-300 ${
+            className={`whitespace-nowrap transition-opacity px-1 duration-300 ${
               hoverSidebar || hoverProjects ? "opacity-100" : "opacity-0"
             }`}
           >
