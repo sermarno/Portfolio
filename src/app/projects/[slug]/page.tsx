@@ -25,7 +25,9 @@ export default function ProjectPage() {
           onClick={() => router.back()}
           className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
         >
-          <span className="material-symbols-outlined">arrow_top_left</span>
+          <span className="material-symbols-outlined text-white mr-2">
+            arrow_back
+          </span>
           Go Back
           {/* underline effect */}
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>

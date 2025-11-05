@@ -38,7 +38,9 @@ export default function SideBar() {
         onClick={() => router.back()}
         className="flex items-center justify-center md:justify-start w-full py-2 px-2 rounded hover:bg-[#333] transition-colors gap-2"
       >
-        <span className="material-symbols-outlined">arrow_top_left</span>
+        <span className="material-symbols-outlined text-white mr-2">
+          arrow_back
+        </span>
         <span
           className={`whitespace-nowrap transition-opacity duration-300 ${
             hoverSidebar ? "opacity-100" : "opacity-0"
