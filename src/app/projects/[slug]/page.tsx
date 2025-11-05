@@ -1,8 +1,7 @@
-"use client";
-
-import { notFound, useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import projects from "@/data/projects";
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import SideBar from "@/components/SideBar";
 
@@ -11,8 +10,6 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const router = useRouter();
-
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -26,15 +23,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       {/* Main Content */}
       <main className="flex-1 px-4 sm:px-6 py-8 md:py-12 bg-[#2a2a2a] rounded-none md:rounded-xl max-w-5xl mx-auto w-full overflow-x-hidden">
         {/* Back Button (mobile only, visible when sidebar is hidden) */}
-        <button
-          onClick={() => router.back()}
+        <Link
+          href="/projects"
           className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
         >
           <span className="material-symbols-outlined">arrow_top_left</span>
           Go Back
-          {/* underline effect */}
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-        </button>
+        </Link>
 
         {/* Project Title */}
         <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-white">
@@ -177,10 +173,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             )}
           </section>
         )}
+
         {/* Skills / Technologies */}
         {project.skills && project.skills.length > 0 && (
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-2xl font-semibold mb-4 text-white">
               Skills & Technologies
             </h2>
             <div className="flex flex-wrap gap-2">
