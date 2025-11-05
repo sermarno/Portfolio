@@ -2,10 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import projects from "@/data/projects";
-import { Github } from "lucide-react";
-import { Check } from "lucide-react";
-import { FileText } from "lucide-react";
-import { ExternalLink, Eye, Folder } from "lucide-react";
+import {
+  ExternalLink,
+  Eye,
+  Folder,
+  Check,
+  Github,
+  FileText,
+} from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -43,14 +47,13 @@ export default function HomePage() {
                 <FileText size={28} className="mr-2" />
                 View Resume
               </a>
-              <a
+              <Link
                 href="/projects"
-                rel="noopener noreferrer"
                 className="m-2 inline-flex items-center justify-center text-white bg-[#fb5bbf] px-4 py-2 mt-3 rounded-lg hover:bg-[#d63d9d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
               >
                 <Folder size={28} className="mr-1 " />
                 View Projects
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -63,14 +66,13 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold text-white">
               Project Highlights
             </h2>
-            <a
+            <Link
               href="/projects"
-              rel="noopener noreferrer"
               className="mb-4 inline-flex items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
             >
               <Folder size={28} className="mr-2 " />
               All Projects
-            </a>
+            </Link>
           </div>
 
           {/* Arrows for Scrolling */}
@@ -155,7 +157,7 @@ export default function HomePage() {
                 Technical Skills
               </h2>
               {/* Skills underneath */}
-              <div className="flex flex-wrap gap-4 m-5">
+              <div className="flex flex-wrap gap-4">
                 {[
                   "UX/UI Design",
                   "Human-Computer Interaction",
@@ -181,15 +183,15 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-start gap-8 mt-[50px]">
             {/* Text on the left */}
             <div className="md:w-2/3 ml-4">
-              <h2 className="text-xl mb-2">My Growth in Informatics</h2>
-              <p className="text-white mb-4">
+              <h2 className="text-xl mb-2">My Informatics Journey</h2>
+              <p className="text-white/80 mb-4">
                 My B.S. in Informatics has granted me a great ability to
                 leverage technology to enhance business productivity, improve
                 user experiences, and design intuitive digital solutions for
-                today's complex technology landscape.
+                today&apos;s complex technology landscape.
               </p>
 
-              <p className="text-white">
+              <p className="text-white/80">
                 Through my studies, I gained hands-on experience in UX/UI
                 design, web development, data management, and human-computer
                 interaction — all skills that allow me to bridge the gap between
@@ -204,7 +206,7 @@ export default function HomePage() {
                 <Image
                   src="/aldeasHome.png"
                   alt="Aldeas Connect Project"
-                  width={500}
+                  width={600}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
@@ -251,8 +253,9 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="flex justify-center bg-[#2e2e2e] px-6 py-12 relative">
-        <div className="max-w-6xl w-full">
+      <section className="bg-[#2e2e2e]">
+        <h1 className="text-xl pt-4 text-center">Get in Touch</h1>
+        <div className="flex justify-center px-6 py-12 relative max-w-6xl w-full">
           <div className="flex justify-center space-x-20">
             {/* GitHub */}
             <a
@@ -261,7 +264,8 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition"
             >
-              <Github size={108} />
+              <Github size={48} />
+              <p className="mt-1">Github</p>
             </a>
 
             {/* LinkedIn */}
@@ -269,12 +273,12 @@ export default function HomePage() {
               href="https://linkedin.com/in/serraarnold"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 transition"
+              className="flex flex-col text-white hover:text-gray-300 transition items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="108"
-                height="108"
+                width="48"
+                height="48"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -292,16 +296,18 @@ export default function HomePage() {
     2.008 3.621 4.621v5.578z"
                 />
               </svg>
+              <p className="mt-1">LinkedIn</p>
             </a>
+
             {/* Gmail */}
             <a
               href="mailto:serraarnold0@gmail.com"
-              className="text-white hover:text-gray-300 transition"
+              className="flex flex-col items-center text-white hover:text-gray-300 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="108"
-                height="108"
+                width="48"
+                height="48"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -313,6 +319,7 @@ export default function HomePage() {
       7.713 11.985-7.713z"
                 />
               </svg>
+              <p className="mt-1">Email</p>
             </a>
           </div>
         </div>

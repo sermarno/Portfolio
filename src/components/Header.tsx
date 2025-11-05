@@ -4,6 +4,7 @@ import Link from "next/link";
 // importing icon.svg - Created with Adobe Illustrator :)
 import Image from "next/image";
 import { useState } from "react";
+import { Home, Folder, FileText, Contact } from "lucide-react";
 
 export default function Header() {
   // for toggle dropdown menu
@@ -36,7 +37,7 @@ export default function Header() {
 
       {/* Hamburger Icon - transforms to x when clicked */}
       <button
-        className="flex flex-col justify-center items-center space-y-1 w-8 h-8"
+        className="flex flex-col justify-center cursor-pointer items-center space-y-1 w-8 h-8"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
@@ -59,7 +60,7 @@ export default function Header() {
 
       {/* Dropdown Menu */}
       <nav
-        className={`absolute top-full right-4 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-md flex flex-col items-start p-4 space-y-2 transition-all duration-300 ${
+        className={`absolute top-full right-4 bg-[#2a2a2a] border border-white/10 rounded-lg cursor-pointer shadow-md flex flex-col items-start p-8 space-y-3 transition-all duration-300 ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -68,30 +69,38 @@ export default function Header() {
         <Link
           href="/"
           onClick={() => setIsOpen(false)}
-          className="hover:underline"
+          className="flex items-center relative group w-full py-1"
         >
+          <Home size={16} className="flex-shrink-0 mr-3" />
           Home
+          <span className="absolute bottom-0 left-0 h-0.5 bg-white w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
         <Link
           href="/resume"
           onClick={() => setIsOpen(false)}
-          className="hover:underline"
+          className="flex items-center relative group w-full py-1"
         >
+          <FileText size={16} className="flex-shrink-0 mr-3" />
           Resume
+          <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
         <Link
           href="/projects"
           onClick={() => setIsOpen(false)}
-          className="hover:underline"
+          className="flex items-center relative group w-full py-1"
         >
+          <Folder size={16} className="flex-shrink-0 mr-3" />
           Projects
+          <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
         <Link
           href="/contact"
           onClick={() => setIsOpen(false)}
-          className="hover:underline"
+          className="flex items-center relative group w-full py-1"
         >
+          <Contact size={16} className="flex-shrink-0 mr-3" />
           Contact
+          <span className="h-0.5 bg-white absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
         </Link>
       </nav>
     </header>
