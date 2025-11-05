@@ -6,11 +6,13 @@ import { ExternalLink } from "lucide-react";
 import SideBar from "@/components/SideBar";
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }> | { slug: string };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  // handle both async and sync params
+  const resolvedParams = await Promise.resolve(params);
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
@@ -22,7 +24,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Main Content */}
       <main className="flex-1 px-4 sm:px-6 py-8 md:py-12 bg-[#2a2a2a] rounded-none md:rounded-xl max-w-5xl mx-auto w-full overflow-x-hidden">
-        {/* Back Button (mobile only, visible when sidebar is hidden) */}
+        {/* Back Button (mobile only) */}
         <Link
           href="/projects"
           className="relative flex items-center [@media(min-width:1200px)]:hidden py-2 mb-2 font-medium group transition-colors gap-2 cursor-pointer"
@@ -40,10 +42,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           {project.subtitle}
         </p>
 
-        {/* Project Description Section */}
+        {/* Project Description */}
         <section className="mb-8">
           <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-12">
-            {/* Text content */}
             <div className="flex-1">
               <h2 className="text-2xl font-semibold text-white mb-4">
                 Overview
