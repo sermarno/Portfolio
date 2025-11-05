@@ -2,7 +2,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import projects from "@/data/projects";
-import { ExternalLink, Eye, Folder, Check, Github } from "lucide-react";
+import {
+  SiPython,
+  SiFigma,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiJavascript,
+  SiCanva,
+  SiAdobecreativecloud,
+  SiTailwindcss,
+  SiReact,
+  SiGithub,
+  SiLinux,
+  SiDocker,
+  SiMysql,
+  SiPhp,
+  SiTypescript,
+} from "react-icons/si";
+import { ExternalLink, Eye, Check, Github } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -50,16 +67,18 @@ export default function HomePage() {
       {/* Projects Section */}
       <section className="flex justify-center px-6 py-12 bg-[#1a1a1a] relative">
         <div className="max-w-6xl w-full">
-          <div className="relative mb-8">
-            <h2 className="text-2xl text-center font-semibold text-white">
+          <div className="relative mb-3 md:mb-15">
+            <h2 className="text-2xl text-center mb-2 md:mb-0 font-semibold text-white">
               Project Highlights
             </h2>
             <Link
               href="/projects"
-              className="absolute top-0 right-0 mb-4 inline-flex items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+              className="flex md:absolute md:top-0 md:right-0 items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
             >
-              <Folder size={28} className="mr-2 " />
               All Projects
+              <span className="material-symbols-outlined text-white m-1">
+                arrow_forward
+              </span>
             </Link>
           </div>
 
@@ -126,38 +145,37 @@ export default function HomePage() {
         </div>
       </section>
       {/* Informatics Section */}
-      <section className="flex flex-col px-6 py-12 relative">
-        <div className="max-w-6xl mx-auto">
-          {/* Dictionary-style Informatics Header */}
-          <div className="flex">
-            <div className="bg-[#1a1a1a] border border-gray-700 rounded-xl p-6 mb-6">
-              <h2 className="text-3xl font-bold text-white">Informatics</h2>
-              <p className="text-gray-400 italic mt-1">/in·fr·ma·tuhks/</p>
-              <p className="text-gray-400 uppercase text-xs mt-1">noun</p>
-              <p className="text-white mt-3">
-                The study of how people, technology, and data interact. Focuses
-                on designing and leveraging technology to enhance user
-                experiences and improve productivity.
-              </p>
-            </div>
-            <div className="flex flex-col ml-3 bg-[#1a1a1a] rounded">
-              <h2 className="flex justify-center p-8 text-xl font-bold items-center">
-                Technical Skills
-              </h2>
-              {/* Skills underneath */}
-              <div className="flex flex-wrap gap-4">
+      <section className="md:flex-row m-4 p-6">
+        <div className="flex">
+          {/* Journey and Skills */}
+          <div className="p-3 max-w-[600px]">
+            <h2 className="text-4xl mb-3">My Informatics Journey</h2>
+            <p className="text-[#a3b2bd] text-lg mb-2">
+              My B.S. in Informatics has granted me a great ability to leverage
+              technology to enhance business productivity, improve user
+              experiences, and design intuitive digital solutions for
+              today&apos;s complex technology landscape.
+            </p>
+            <p className="text-[#a3b2bd] text-lg mb-2">
+              Through my studies, I gained hands-on experience in UX/UI design,
+              web development, data management, and human-computer interaction —
+              all skills that allow me to bridge the gap between users and
+              technology.
+            </p>
+            <div className="mt-4">
+              <div className="flex flex-wrap gap-3">
                 {[
                   "UX/UI Design",
                   "Human-Computer Interaction",
                   "Data Analysis & Management",
-                  "Python & VBA Programming",
+                  "VBA Programming",
                   "Database Design & SQL",
                   "User Research & Usability Testing",
                   "Responsive & Accessible Design",
                 ].map((skill) => (
                   <div
                     key={skill}
-                    className="flex items-center gap-1 text-[#ff65c5] px-7 text-sm font-medium"
+                    className="flex items-center gap-2 bg-[#2a2a2a] text-[#ff65c5] px-3 py-1 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform duration-200"
                   >
                     <Check size={16} className="text-[#ff65c5]" />
                     <span>{skill}</span>
@@ -166,76 +184,123 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          {/* Image */}
+          <div className="flex flex-col justify-center m-auto max-w-[800px]">
+            {/* Image + hover overlay */}
+            <div className="relative group rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/aldeasHome.png"
+                alt="Aldeas Connect Project"
+                width={500}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
 
-          {/* Text + Image Container */}
-          <div className="flex flex-col md:flex-row items-start gap-8 mt-[50px]">
-            {/* Text on the left */}
-            <div className="md:w-2/3 ml-4">
-              <h2 className="text-xl mb-2">My Informatics Journey</h2>
-              <p className="text-white/80 mb-4">
-                My B.S. in Informatics has granted me a great ability to
-                leverage technology to enhance business productivity, improve
-                user experiences, and design intuitive digital solutions for
-                today&apos;s complex technology landscape.
-              </p>
-
-              <p className="text-white/80">
-                Through my studies, I gained hands-on experience in UX/UI
-                design, web development, data management, and human-computer
-                interaction — all skills that allow me to bridge the gap between
-                users and technology.
-              </p>
-            </div>
-
-            {/* Project Card */}
-            <div className="md:w-1/3">
-              {/* Image + hover overlay */}
-              <div className="relative group rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/aldeasHome.png"
-                  alt="Aldeas Connect Project"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-
-                {/* Overlay (semi-transparent, fades in on hover) */}
-                <div
-                  className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 
+              {/* Overlay (semi-transparent, fades in on hover) */}
+              <div
+                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 
                         flex flex-col pointer-events-none group-hover:pointer-events-auto"
-                >
-                  <div className="flex flex-1">
-                    {/* View Project (left half) */}
-                    <Link
-                      href={`/projects/aldeas-connect`}
-                      className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
-                    >
-                      <Eye size={16} />
-                      <span>View Project</span>
-                    </Link>
+              >
+                <div className="flex flex-1">
+                  {/* View Project (left half) */}
+                  <Link
+                    href={`/projects/aldeas-connect`}
+                    className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
+                  >
+                    <Eye size={16} />
+                    <span>View Project</span>
+                  </Link>
 
-                    {/* Visit Website (right half) */}
-                    <a
-                      href="https://github.com/sermarno/Aldeas-Connect.git"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      <span>View Github Repository</span>
-                    </a>
-                  </div>
+                  {/* Visit Website (right half) */}
+                  <a
+                    href="https://github.com/sermarno/Aldeas-Connect.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 text-white text-sm bg-black/30 hover:bg-black/50 transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    <span>View Github Repository</span>
+                  </a>
                 </div>
               </div>
-
-              {/* Static caption */}
-              <p className="mt-2 text-xs text-white-700 text-right">
-                IU Informatics: Full-Stack Project
-              </p>
-              <p className="mt-2 text-xs text-right">
-                <b> Aldeas Connect</b>
-              </p>
             </div>
+
+            {/* Static caption */}
+            <p className="mt-2 text-xs text-white-700 text-right">
+              IU Informatics: Full-Stack Project
+            </p>
+            <p className="mt-2 text-xs text-right">
+              <b> Aldeas Connect</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Tech Section */}
+      <section className="my-12 text-center border border-[#2a2a2a] p-6 max-w-[1100px] m-auto">
+        <h2 className="text-2xl font-bold text-white mb-6">
+          Tools & Technologies
+        </h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-col items-center">
+            <SiPython size={48} className="text-[#3776AB]" />
+            <span className="mt-2 text-white text-sm">Python</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiFigma size={48} className="text-[#F24E1E]" />
+            <span className="mt-2 text-white text-sm">Figma</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiAdobephotoshop size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Photoshop</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiAdobeillustrator size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Illustrator</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiAdobecreativecloud size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Creative Cloud</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiJavascript size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">JavaScript</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiCanva size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Canva</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiTailwindcss size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Tailwind CSS</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiReact size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">React</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiGithub size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">GitHub</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiLinux size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Linux</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiDocker size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">Docker</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiMysql size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">MySQL</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiPhp size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">PHP</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiTypescript size={48} className="text-[#31A8FF]" />
+            <span className="mt-2 text-white text-sm">TypeScript</span>
           </div>
         </div>
       </section>
@@ -243,7 +308,7 @@ export default function HomePage() {
       {/* Contact Section */}
       <section className="bg-[#2e2e2e]">
         <h1 className="text-xl pt-4 text-center">Get in Touch</h1>
-        <div className="flex justify-center px-6 py-12 relative max-w-6xl w-full">
+        <div className="flex justify-center px-6 py-12 relative w-full">
           <div className="flex justify-center space-x-20">
             {/* GitHub */}
             <a

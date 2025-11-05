@@ -90,6 +90,19 @@ export default function ResumePage() {
               className="object-cover rounded-xl border-2 border-pink-200 shadow-[0_0_30px_5px_rgba(255,105,180,0.6)] w-full max-w-[250px] h-auto"
             />
           </div>
+          {/* Informatics Dict Card and Project Card */}
+          <div className="flex md:flex-col p-4">
+            <div className="bg-[#2a2a2a] py-6 px-6 w-[400px] rounded-lg">
+              <h2 className="text-lg font-bold text-white">Informatics</h2>
+              <p className="text-gray-400 text-sm italic">/in·fr·ma·tuhks/</p>
+              <p className="text-gray-400 uppercase text-xs mt-1">noun</p>
+              <p className="text-white text-sm mt-3">
+                The study of how people, technology, and data interact. Focuses
+                on designing and leveraging technology to enhance user
+                experiences and improve productivity.
+              </p>
+            </div>
+          </div>
           <div className="flex flex-col px-3 py-4 w-full md:w-2/3">
             <h3 className="text-xl font-bold mb-2 text-white">
               Professional Summary
