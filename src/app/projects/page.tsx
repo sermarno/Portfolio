@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 type ProjectCardProps = {
   title: string;
@@ -37,10 +38,13 @@ export default function ProjectsPage() {
       <Link href={href}>
         {/* Project Image */}
         <div className="relative overflow-hidden rounded-lg mb-4">
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-[150px] object-cover rounded-lg transition-transform duration-500"
+            width={300}
+            height={250}
+            className="w-full h-[250px] object-cover rounded-lg transition-transform duration-500"
+            style={{ objectFit: "cover" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#4a4a4a] via-transparent to-transparent opacity-80 pointer-events-none rounded-lg"></div>
         </div>
