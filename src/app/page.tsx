@@ -19,9 +19,32 @@ import {
   SiPhp,
   SiTypescript,
 } from "react-icons/si";
+import { useState, useEffect } from "react";
 import { ExternalLink, Eye, Check, Github } from "lucide-react";
 
 export default function HomePage() {
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+
+  useEffect(() => {
+    const scrollContainer = document.getElementById("project-scroll");
+
+    const handleScroll = () => {
+      // show left arrow if scroll position > 0
+      if (scrollContainer) {
+        setCanScrollLeft(scrollContainer.scrollLeft > 0);
+      }
+    };
+
+    scrollContainer?.addEventListener("scroll", handleScroll);
+
+    return () => scrollContainer?.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollByAmount = (amount: number) => {
+    const scrollContainer = document.getElementById("project-scroll");
+    scrollContainer?.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
   return (
     <main>
       {/* Landing Page Header */}
@@ -66,40 +89,27 @@ export default function HomePage() {
 
       {/* Projects Section */}
       <section className="flex justify-center px-6 py-12 bg-[#1a1a1a] relative">
-        <div className="max-w-6xl w-full">
-          <div className="relative mb-3 md:mb-15">
+        <div className="max-w-7xl w-full">
+          <div className="relative md:mb-5">
             <h2 className="text-2xl text-center mb-2 md:mb-0 font-semibold text-white">
               Project Highlights
             </h2>
-            <Link
-              href="/projects"
-              className="flex md:absolute md:top-0 md:right-0 items-center justify-center text-white bg-[#2e2e2e] px-4 py-2 rounded-lg hover:bg-[#1e1e1e] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
-            >
-              All Projects
-              <span className="material-symbols-outlined text-white m-1">
-                arrow_forward
-              </span>
-            </Link>
           </div>
 
-          {/* Arrows for Scrolling */}
+          {/* Left Arrow (only shows if scrolled) */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scrollByAmount(-400)}
+              className="absolute left-0 md:left-10 md:w-[50xp] md:h-[40px] md:text-lg top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-2 py-1 rounded-full z-10 hover:bg-opacity-80 transform transition-all duration-300 hover:-translate-x-1 cursor-pointer"
+            >
+              ◀
+            </button>
+          )}
+
+          {/* Right Arrow */}
           <button
-            onClick={() => {
-              document
-                .getElementById("project-scroll")
-                ?.scrollBy({ left: -400, behavior: "smooth" });
-            }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-2 py-1 rounded-full z-10 hover:bg-opacity-80"
-          >
-            ◀
-          </button>
-          <button
-            onClick={() => {
-              document
-                .getElementById("project-scroll")
-                ?.scrollBy({ left: 400, behavior: "smooth" });
-            }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-2 py-1 rounded-full z-10 hover:bg-opacity-80"
+            onClick={() => scrollByAmount(400)}
+            className="absolute right-0 md:right-10 md:w-[50xp] md:h-[40px] md:text-lg top-1/2 -translate-y-1/2 bg-black bg-opacity-60 text-white px-2 py-1 rounded-full z-10 hover:bg-opacity-80 transform transition-all duration-300 hover:translate-x-1 cursor-pointer"
           >
             ▶
           </button>
@@ -107,30 +117,29 @@ export default function HomePage() {
           {/* Scrollable Project Cards */}
           <div
             id="project-scroll"
-            className="flex overflow-x-auto gap-6 scroll-smooth"
+            className="flex overflow-x-auto gap-9 scroll-smooth p-6"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`}>
-                <div className="w-[300px] h-[350px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg cursor-pointer">
+                <div className="w-[500px] h-[400px] flex-shrink-0 bg-[#2e2e2e] rounded-xl overflow-hidden relative group shadow-lg cursor-pointer transform transition-all duration-300 hover:-translate-y-1">
+                  <div className="p-5">
+                    <div className="text-[#ff65c5] text-sm font-medium">
+                      {project.role}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    <p>{project.subtitle}</p>
+                    <p className="mt-3 text-[#a3b2bd]">{project.description}</p>
+                  </div>
                   <Image
                     src={project.coverImage}
                     alt={`${project.title} Screenshot`}
                     width={400}
                     height={250}
-                    className="object-cover w-full h-48"
+                    className="object-cover w-full p-8 rounded-xl"
                   />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-white">
-                      {project.title}
-                    </h3>
-                    <p>{project.subtitle}</p>
-                  </div>
-
-                  {/* Hover Role Banner */}
-                  <div className="absolute top-0 left-0 w-full bg-[#ff65c5] text-black text-sm font-medium py-2 px-4 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    {project.role}
-                  </div>
                 </div>
               </Link>
             ))}
@@ -143,6 +152,15 @@ export default function HomePage() {
             }
           `}</style>
         </div>
+        <Link
+          href="/projects"
+          className="absolute h-[50px] bottom-0 flex md:top-10 md:right-5 items-center justify-center text-white bg-[#ff65c5] px-4 py-2 rounded-lg hover:bg-[#fa3aac] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-in-out"
+        >
+          All Projects
+          <span className="material-symbols-outlined text-white m-1">
+            arrow_forward
+          </span>
+        </Link>
       </section>
       {/* Informatics Section */}
       <section className="md:flex-row m-4 p-6">

@@ -3,12 +3,12 @@ const projects = [
   {
     slug: "aldeas-connect",
     title: "Aldeas Connect",
-    subtitle: "Informatics Capstone, Fall 2024 - Spring 2025",
+    subtitle: "Fall 2024 - Spring 2025",
     role: "Full-Stack Development",
     coverImage: "/aldeasConnect.png",
     description: `
-      Aldeas Connect is a platform for monitoring and managing smart village initiatives
-      in Mexico. It features user-centered data dashboards and interactive analytics tools
+      A web application for monitoring and managing smart village initiatives
+      in Mexico. Features user-centered data dashboards and interactive analytics tools
       for stakeholders.`,
     extLink: "https://github.com/sermarno/Aldeas-Connect.git",
     logo: "/acLogo.png",
@@ -25,11 +25,11 @@ const projects = [
   {
     slug: "discover-washington",
     title: "Discover Washington",
-    subtitle: "IU HCC, Spring 2025",
+    subtitle: "Spring 2025",
     role: "UX Research",
     coverImage: "/discoverWashington.png",
     description: `
-      A digital tourism guide for the Downtown Washington Historic Trail.
+      A web application that acts as a digital tourism guide for the Downtown Washington Historic Trail.
       Includes data-driven UX/UI design and context-aware features for mobile users.`,
     wixLink: "https://team53704.wixstudio.com/discoverwashington",
     logo: "/dwLogo.png",
@@ -45,7 +45,7 @@ const projects = [
   {
     slug: "weight-time",
     title: "Weight Time",
-    subtitle: "IU Visual Design, Fall 2023",
+    subtitle: "Fall 2023",
     role: "Web Design",
     coverImage: "/weightTime.png",
     description: `
@@ -66,12 +66,12 @@ const projects = [
   {
     slug: "rainy-night",
     title: "Rainy Night",
-    subtitle: "IU Visual Design, Spring 2025",
+    subtitle: "Spring 2025",
     role: "Adobe Photoshop",
     coverImage: "/rainyNight.png",
     description: `
       A digital artwork created as part of visual design practice.
-      Explores mood and lighting techniques in Photoshop.`,
+      Explores layering, color adjustments, and lighting techniques in Photoshop.`,
     images: ["/rainyNight.png", "/rainyNight2.png", "/rainyNight3.png"],
     video: "/rainyNightDemo.mp4",
     skills: ["Adobe Photoshop", "Digital Illustration", "Visual Composition"],
@@ -79,11 +79,11 @@ const projects = [
   {
     slug: "foodie-match",
     title: "Foodie Match",
-    subtitle: "IU HCI, Fall 2023",
+    subtitle: "Fall 2023",
     role: "UX Research",
     coverImage: "/foodieMatch.png",
     description: `
-      A mobile app prototype matching users with personalized recipes.
+      A mobile app prototype from low to high fidelity that matches users with personalized recipes.
       Focused on intuitive navigation and data-driven UX decisions.`,
     images: [
       "/foodieMatch.png",
@@ -97,11 +97,11 @@ const projects = [
   {
     slug: "tide-runner",
     title: "Tide Runner",
-    subtitle: "IU Intro to VR, Spring 2025",
+    subtitle: "Spring 2025",
     role: "Virtual Reality",
     coverImage: "/tideRunner.png",
     description: `
-    A beach-themed side-scrolling game where players control a rolling beach ball, jumping over obstacles like ice cream stands, umbrellas, and tennis nets. Designed to showcase Unity skills, the project emphasizes implementing audio (background music and sound effects), managing game resets, and integrating assets from the Unity Store. The goal is to survive as long as possible while exploring fundamental Unity features and game mechanics.
+    A side-scrolling game where players control a rolling beach ball. Showcases Unity skills and emphasizes adding audio, managing game resets, and integrating assets from the Unity Store.
       `,
     logo: "/trLogo.png",
     images: [
@@ -116,7 +116,7 @@ const projects = [
   {
     slug: "wellness-form",
     title: "Wellness Registration Form",
-    subtitle: "IU JavaScript, Spring 2025",
+    subtitle: "Spring 2025",
     role: "JavaScript",
     coverImage: "/wellnessForm.png",
     description: `
@@ -129,11 +129,11 @@ const projects = [
   {
     slug: "canvas-sketch",
     title: "Canvas Sketch Web App",
-    subtitle: "IU JavaScript, Spring 2025",
+    subtitle: "Spring 2025",
     role: "JavaScript",
     coverImage: "/canvasSketch.png",
     description: `
-      Interactive web-based drawing application allowing users to create art with customizable pen sizes, multiple color modes, and keyboard or mouse controls, demonstrating dynamic UI and creative programming with the HTML Canvas API.
+      A web-based drawing app that allows users to draw with custom pen sizes, multiple color modes, and keyboard or mouse controls. Demonstrates dynamic UI and creative programming with the HTML Canvas API.
       `,
     images: ["/canvasSketch.png", "/canvasSketch2.png", "/canvasSketch3.png"],
     youtubeId: "bbL_Ko3xJCg",
