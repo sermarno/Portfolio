@@ -1,23 +1,18 @@
 "use client";
 
-import { notFound, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import projects from "@/data/projects";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import SideBar from "@/components/SideBar";
 
-interface ProjectPageProps {
-  params: { slug: string };
-}
-
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage() {
   const router = useRouter();
+  const params = useParams();
 
   const project = projects.find((p) => p.slug === params.slug);
 
-  if (!project) {
-    notFound();
-  }
+  if (!project) return <div>Project not found</div>;
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
